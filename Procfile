@@ -1,1 +1,1 @@
-worker: python NIX_MUSIC.py
+worker: python NIX_MMR.py
