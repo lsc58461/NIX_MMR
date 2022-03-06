@@ -1,7 +1,7 @@
 import os
-import discord
+import nextcord
 from api import Rank, Normal, ARAM
-from discord.ext import commands
+from nextcord.ext import commands
 
 class MMR_Check(commands.Cog):
 
@@ -11,11 +11,11 @@ class MMR_Check(commands.Cog):
             _Rank = Rank(search)
             _Normal = Normal(search)
             _ARAM = ARAM(search)
-            embed = (discord.Embed(title='소환사 정보', description='```css\n{}\n```'.format(search), color=discord.Color.blurple())
+            embed = (nextcord.Embed(title='소환사 정보', description='```css\n{}\n```'.format(search), color=nextcord.Color.blurple())
                 .add_field(name='솔로랭크', value='```css\n{}\n```'.format(_Rank[0]), inline = False)
                 .add_field(name='노말', value='```css\n{}\n```'.format(_Normal[0]), inline = False)
                 .add_field(name='무작위 총력전', value='```css\n{}\n```'.format(_ARAM[0]), inline = False)
-                .set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url))
+                .set_author(name=ctx.author.name, icon_url=ctx.author.avatar.url))
             await ctx.send(embed=embed)
 
 bot = commands.Bot(command_prefix='!', case_insensitive=True)
