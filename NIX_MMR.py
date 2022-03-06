@@ -16,6 +16,7 @@ class MMR_Check(commands.Cog):
                 .add_field(name='노말', value='```css\n{}\n```'.format(_Normal[0]), inline = False)
                 .add_field(name='무작위 총력전', value='```css\n{}\n```'.format(_ARAM[0]), inline = False)
                 .set_author(name=ctx.author.name, icon_url=ctx.author.avatar.url))
+                
             await ctx.send(embed=embed)
 
 bot = commands.Bot(command_prefix='!', case_insensitive=True)
