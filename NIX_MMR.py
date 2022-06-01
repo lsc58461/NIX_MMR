@@ -18,6 +18,7 @@ class MMR_Check(commands.Cog):
                 .set_author(name=ctx.author.name, icon_url=ctx.author.display_avatar.url))
                 
             await ctx.send(embed=embed)
+            await ctx.send('현재 API 문제로 인해 사용이 불가능합니다.\n빠른 해결을 위해 노력하겠습니다.')
 
     @commands.Cog.listener()
     async def on_message(self, message):
