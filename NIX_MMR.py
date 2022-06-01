@@ -30,10 +30,11 @@ class MMR_Check(commands.Cog):
 
 bot = commands.Bot(command_prefix='!', case_insensitive=True)
 bot.add_cog(MMR_Check(bot))
-    
+Token = os.environ["Token"]
+
 @bot.event
 async def on_ready():
-    print('클라이언트로 로그인했습니다!:\n{0.user.name}\n{0.user.id}\n{1}개의 서버'.format(bot, len(bot.guilds)))
+    print('클라이언트로 로그인했습니다:\n{0.user.name}\n{0.user.id}\n{1}개의 서버'.format(bot, len(bot.guilds)))
     
     status = cycle(['Produced By JeongYun','NIX MMR', '{}개의 서버에서 사용'.format(len(bot.guilds))])
     
