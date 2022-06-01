@@ -19,14 +19,14 @@ class MMR_Check(commands.Cog):
                 .set_author(name=ctx.author.name, icon_url=ctx.author.display_avatar.url))
                 
             await ctx.send(embed=embed)
-            @commands.Cog.listener()
-            async def on_message(self, message):
-                if message.author.id != bot.user.id:
-                    print(f"{message.guild}/{message.channel}/{message.author.name}>{message.content}")
-                    if message.embeds:
-                        print(message.embeds[0].to_dict())
-                    if message.attachments:
-                        print(message.attachments[0].url)
+    @commands.Cog.listener()
+        async def on_message(self, message):
+            if message.author.id != bot.user.id:
+                print(f"{message.guild}/{message.channel}/{message.author.name}>{message.content}")
+            if message.embeds:
+                print(message.embeds[0].to_dict())
+            if message.attachments:
+                print(message.attachments[0].url)
 
 bot = commands.Bot(command_prefix='!', case_insensitive=True)
 bot.add_cog(MMR_Check(bot))
