@@ -7,10 +7,10 @@ This code uses the api on the site above to retrieve the mmr of the League of Le
 
 import requests
 URL = 'https://kr.whatismymmr.com/api/v1/summoner?name='
-
+API_KEY = 'Y8rGqyWaq3FngTpz6tuLiuLWmuLgeFmPXBPJ7oAQeoRMPrz3Jh4nxUBLRKfFptvK'
 def Rank(search='hide on bush'):
     try:
-        Read_Json = requests.get(f"{URL}{search}").json()
+        Read_Json = requests.get(f"{URL}{search}&apiKey={API_KEY}").json()
         print(Read_Json)
         if 'error' in Read_Json:
             if Read_Json['error']['code'] == 0:
@@ -45,7 +45,7 @@ def Rank(search='hide on bush'):
 
 def Normal(search='hide on bush'):
     try:
-        Read_Json = requests.get(f"{URL}{search}").json()
+        Read_Json = requests.get(f"{URL}{search}&apiKey={API_KEY}").json()
         print(Read_Json)
         if 'error' in Read_Json:
             if Read_Json['error']['code'] == 0:
@@ -80,7 +80,7 @@ def Normal(search='hide on bush'):
 
 def ARAM(search='hide on bush'):
     try:
-        Read_Json = requests.get(f"{URL}{search}").json()
+        Read_Json = requests.get(f"{URL}{search}&apiKey={API_KEY}").json()
         print(Read_Json)
         if 'error' in Read_Json:
             if Read_Json['error']['code'] == 0:
