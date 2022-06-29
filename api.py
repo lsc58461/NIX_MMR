@@ -6,8 +6,11 @@ This code uses the api on the site above to retrieve the mmr of the League of Le
 
 
 import requests
+import os
+
+
 URL = 'https://kr.whatismymmr.com/api/v1/summoner?name='
-API_KEY = 'Y8rGqyWaq3FngTpz6tuLiuLWmuLgeFmPXBPJ7oAQeoRMPrz3Jh4nxUBLRKfFptvK'
+API_KEY = os.environ['API_KEY']
 def Rank(search='hide on bush'):
     try:
         Read_Json = requests.get(f"{URL}{search}&apiKey={API_KEY}").json()
