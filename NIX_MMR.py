@@ -8,9 +8,11 @@ class MMR_Check(commands.Cog):
     @commands.command(name='mmr')
     async def _MMR(self, ctx: commands.Context, *, search: str):
         async with ctx.typing():
+            print("-----------------------------------")
             _Rank = Rank(search)
             _Normal = Normal(search)
             _ARAM = ARAM(search)
+            print("-----------------------------------")
             embed = (nextcord.Embed(title='소환사 정보', description='```css\n{}\n```'.format(search), color=nextcord.Color.blurple())
                 .add_field(name='솔로랭크', value='```css\n{}\n```'.format(_Rank[0]), inline = False)
                 .add_field(name='노말', value='```css\n{}\n```'.format(_Normal[0]), inline = False)
